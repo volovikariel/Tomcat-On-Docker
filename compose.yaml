@@ -1,0 +1,15 @@
+version: "1"
+name: mockapp
+
+services:
+  tomcat:
+    container_name: mockapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - target: 8080
+        host_ip: 127.0.0.1
+        published: 5678
+        protocol: tcp
+        mode: host
